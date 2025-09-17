@@ -1,0 +1,59 @@
+body {
+    display: flex;
+}
+
+#avatar {
+    margin: 0 25px;
+    display: grid;
+    width: fit-content;
+}
+
+#hair,
+#face {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#hair {
+    z-index: 2;
+}
+
+.arrow {
+    height: 50%;
+    align-self: center;
+}
+
+.opacity50 {
+    opacity: 0.5;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#colorHair {
+    margin-left: 100px;
+}
+
+#colorHair section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.color {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#black {
+    background-color: #3C3C3B;
+}
+
+#blond {
+    background-color: #F9B233;
+}
+
+#turquoise {
+    background-color: #00A19A;
+}
