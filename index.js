@@ -1,9 +1,18 @@
-const monTexte = document.querySelector('textarea')
-const maDiv = document.querySelector('div')
+const prd = document.getElementById('nom_produit')
+const qte = document.getElementById('quantite')
+const prx = document.getElementById('prix_ht')
+const btn = document.getElementById('calcul')
+const res = document.getElementById('resultat')
 
-monTexte.addEventListener('keyup', (e) => {
-
-    console.log(e)
-    maDiv.innerHTML = marked(monTexte.value )
-    localStorage.setItem(maDiv, monTexte.value)
+btn.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (!prd.value || !qte.value || !prx.value) {
+        res.textContent = "Veuillez remplir tous les champs."
+        return
+    }
+    const quantite = parseFloat(qte.value)
+    const prixHT = parseFloat(prx.value)
+    
+    const montantTTC = prixHT * quantite
+    res.textContent = `Montant TTC : ${montantTTC.toFixed(2)}`
 })
